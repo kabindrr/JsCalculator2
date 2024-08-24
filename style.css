@@ -1,0 +1,109 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #c75f1acb;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+  max-width: 400px;
+  max-height: fit-content;
+  background: #0f0f0f;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+}
+.display1 {
+  grid-column: span 4;
+  background: #333333c5;
+
+  color: wheat;
+  padding: 20px;
+  font-size: 1em;
+  text-align: right;
+  border-radius: 5px;
+}
+
+.display {
+  grid-column: span 4;
+  background: #333333c5;
+  color: #fff;
+  padding: 20px;
+  font-size: 2em;
+  text-align: right;
+  border-radius: 5px;
+}
+
+.btn {
+  background: rgba(128, 128, 128, 0.589);
+  border: 1px solid #df500e;
+  border-radius: 50%;
+  padding: 20px;
+  font-size: 1.5em;
+  text-align: center;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: gray;
+  transform: scale(1.05);
+}
+
+.btn-AC {
+  background: #f44336;
+  color: white;
+}
+
+.btn-C {
+  background: #eb981cf5;
+  color: white;
+}
+
+.btn-modulus {
+  background: #eb981cf5;
+  color: white;
+}
+
+.btn-divide {
+  background: #eb981cf5;
+  color: white;
+}
+
+.btn-multiply {
+  background: #eb981cf5;
+  color: white;
+}
+
+.btn-minus {
+  background: #eb981cf5;
+  color: white;
+}
+
+.btn-plus {
+  background: #eb981cf5;
+  color: white;
+}
+
+.btn-equal {
+  background: #eb981cf5;
+  color: white;
+}
+
+.btn-0 {
+  grid-column: span 2;
+  border-radius: 10px;
+  text-align: center;
+  font-size: xx-large;
+}
