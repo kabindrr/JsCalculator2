@@ -7,7 +7,7 @@ const displayElm1 = document.querySelector(".display1");
 const buttonAction = (value) => {
   if (value === "AC") {
     strToDisplay = "";
-    displayElm1.innerText = "" || 0;
+    displayElm1.innerText = "";
     return display(strToDisplay);
   }
   if (value === "=") {
