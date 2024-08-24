@@ -33,7 +33,9 @@ const totalCalculation = () => {
   try {
     const total = eval(strToDisplay);
     display(total);
+    strToDisplay = total;
   } catch (error) {
     display("Error");
+    displayElm1.innerText = "";
   }
 };
