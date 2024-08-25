@@ -3,6 +3,7 @@ const allButtonsElement = document.querySelectorAll(".btn");
 let strToDisplay = "";
 const displayElm = document.querySelector(".display");
 const displayElm1 = document.querySelector(".display1");
+const operators = ["%", "+", "-", "*", "/"];
 
 allButtonsElement.forEach((btn) => {
   btn.addEventListener("click", () => {
@@ -23,6 +24,10 @@ const buttonAction = (value) => {
     return display(strToDisplay);
   }
   if (value === "=") {
+    const lastCharacter = strToDisplay[strToDisplay.length - 1];
+    if (operators.includes(lastCharacter)) {
+      strToDisplay = strToDisplay.slice(0, -1);
+    }
     return totalCalculation();
   }
 
