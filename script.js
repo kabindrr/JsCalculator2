@@ -23,12 +23,23 @@ const buttonAction = (value) => {
     displayElm1.innerText = displayElm1.innerText.slice(0, -1);
     return display(strToDisplay);
   }
+
   if (value === "=") {
     const lastCharacter = strToDisplay[strToDisplay.length - 1];
     if (operators.includes(lastCharacter)) {
       strToDisplay = strToDisplay.slice(0, -1);
     }
     return totalCalculation();
+  }
+
+  //show only  last clicked operator
+  if (operators.includes(value)) {
+    const lastCharacter = strToDisplay[strToDisplay.length - 1];
+    {
+      if (operators.includes(lastCharacter)) {
+        strToDisplay = strToDisplay.slice(0, -1);
+      }
+    }
   }
 
   strToDisplay += value;
