@@ -56,7 +56,7 @@ const totalCalculation = () => {
   try {
     const total = eval(strToDisplay);
     display(total);
-    strToDisplay = total.toString();
+    strToDisplay = total;
   } catch (error) {
     display("Error");
     displayElm1.innerText = "";
