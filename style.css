@@ -38,6 +38,7 @@ body {
 
 .display {
   grid-column: span 4;
+  max-width: 400px;
   background: #333333c5;
   color: #fff;
   padding: 20px;
@@ -47,7 +48,7 @@ body {
 }
 
 .btn {
-  background: rgba(128, 128, 128, 0.589);
+  background: rgba(232, 216, 216, 0.589);
   border: 1px solid #df500e;
   border-radius: 50%;
   padding: 20px;

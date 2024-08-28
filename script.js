@@ -4,6 +4,7 @@ let strToDisplay = "";
 const displayElm = document.querySelector(".display");
 const displayElm1 = document.querySelector(".display1");
 const operators = ["%", "+", "-", "*", "/"];
+const lastOperator = "";
 
 allButtonsElement.forEach((btn) => {
   btn.addEventListener("click", () => {
@@ -42,12 +43,29 @@ const buttonAction = (value) => {
     }
   }
 
+  //handle the dot
+  if (value === ".") {
+    if (!lastOperator) {
+      if (operators.includes(strToDisplay[strToDisplay.length - 1])) {
+        return;
+      } else {
+        const lastOperatorIndex = strToDisplay.lastIndexOf(lastOperator);
+        const lastNumberSet = strToDisplay.slice(lastOperatorIndex - 1);
+
+        if (lastNumberSet.includes(".")) {
+          return;
+        }
+      }
+    }
+  }
+
   strToDisplay += value;
   display(strToDisplay);
   displayElm1.innerText = strToDisplay;
 };
 
 const display = (str) => {
+  displayElm1.innerText = str || "0";
   displayElm.innerText = str || "0.0";
 };
 
@@ -62,3 +80,32 @@ const totalCalculation = () => {
     displayElm1.innerText = "";
   }
 };
+document.addEventListener("keydown", (e) => {
+  const key = e.key;
+  if (key === "Backspace") {
+    buttonAction("C");
+  } else if (key === "Enter" || key === "=") {
+    buttonAction("=");
+  } else if (
+    [
+      "%",
+      "+",
+      "-",
+      "*",
+      "/",
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "0",
+    ].includes(key)
+  ) {
+    buttonAction(key);
+  }
+});
